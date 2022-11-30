@@ -68,7 +68,12 @@ If you have any questions, please contact us at:
 | ----------- | ----------- | ----------- |
 
 | Zue Tesei | [@zuetesei](https://github.com/zuetesei) | placeholder@placeholder |
+  
 | Dennis Jackson | [@monkeyd87](https://github.com/monkeyd87) | Dennisdjack1987@gmail.com |
+  
 | Ryan Hickey | [@ryanpjhickey](https://github.com/ryanpjhickey) | ryanpjhickey@gmail.com |
+  
 | Huy Nguyen | [@idahuy](https://github.com/idahuy) | huygnguyen@outlook.com |
+  
 | Jonathon Biala | [@jonathonb1](https://github.com/jonathonb1) | jonathon.biala@gmail.com |
+  
