@@ -24,8 +24,8 @@ Cook-Book is a blogging site that helps to connect people who are interested in 
 <img src="https://www.logolynx.com/images/logolynx/s_1a/1a6dec46e15b0c11c178b4c7d1efd937.png" width="100" height="100">
 <img src="https://www.logolynx.com/images/logolynx/s_3b/3b9d42a73e06ccac04deb9073e5235ba.png" width="100" height="100">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png?20141107110902>" width="100" height="100">
-<img src="https://cdn.iconscout.com/icon/free/png-256/handlebars-3-1175025.png" width="100" height="100">
-<img src="https://cdn.iconscout.com/icon/free/png-256/sequelize-3-1175091.png" width="100" height="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width="100" height="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png" width="100" height="100">
 <img src="https://cdn.iconscout.com/icon/free/png-256/npm-3-1175132.png" width="100" height="100">
 <img src="https://icon2.cleanpng.com/20180425/xeq/kisspng-node-js-javascript-web-application-express-js-comp-5ae0f84de7b809.1939946215246930699491.jpg" width="100" height="100">
 <img src="https://miro.medium.com/max/1160/0*skYUWg3ZvcY8xRf5" width="100" height="100">
@@ -67,7 +67,7 @@ If you have any questions, please contact us at:
 | Name | Github | Email |
 | ----------- | ----------- | ----------- |
 
-| Zue Tesei | [@zuetesei](https://github.com/zuetesei) | placeholder@placeholder |
+| Zue Tesei | [@zuetesei](https://github.com/zuetesei) | zuleikatesei@gmail.com |
   
 | Dennis Jackson | [@monkeyd87](https://github.com/monkeyd87) | Dennisdjack1987@gmail.com |
   
