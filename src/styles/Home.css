@@ -6,11 +6,11 @@
     --white: #F3F3F3;
     --green: #50A34F;
     --darkgreen: #106F1E;
-    --tan: #BDA79D;
+    --tan: #F0E8DB;
 }
 
 body {
-    background-color: var(--white);
+    background-color: var(--tan);
 }
 
 .about-app {
