@@ -4,16 +4,17 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LogInForm from '../components/LogInForm';
 import '../styles/Home.css';
-// import Illustration from '../assets/cooks.png'
+import Illustration from '../assets/cooks.jpg'
+import Image from 'react-bootstrap/Image'
 
 function Home() {
 
     return (
         <div className='home'>
             <Container>
-                <Row>
-                    <Col>
-                        <div className='about-app'>
+                <Row className='about-app'>
+                    <Col sm={8}>
+                        <div className='intro'>
                             <h1> What is <span className='only-cooks'> OnlyCooks </span>? </h1>
                             <div class="custom-shape-divider-bottom-1669850492">
                                 <svg
@@ -35,11 +36,12 @@ function Home() {
                                     ones, you can explore our database of recipes from kitchens across the globe! All are welcome
                                     to join this community of cooks and creators!
                                 </p>
+                                <img src={Illustration} alt='two cooks' className='justify-content-md-center' />
                             </div>
                         </div>
 
                     </Col>
-                    <Col>
+                    <Col className='sm={4}'>
                         <LogInForm />
                     </Col>
                 </Row>

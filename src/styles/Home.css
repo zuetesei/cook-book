@@ -17,6 +17,15 @@ body {
     padding: 50px 30px 50px 20px;
 }
 
+.intro {
+    padding-right: 40px;
+}
+
+img {
+    max-height: 200px;
+
+}
+
 .home h1 {
     font-family: 'Pacifico';
     letter-spacing: 0.5px;
