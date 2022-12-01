@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,300;0,500;1,700&display=swap');
+
+:root {
+    --orange: #DC7647;
+    --brown: #55433B;
+    --white: #F3F3F3;
+    --green: #50A34F;
+    --darkgreen: #106F1E;
+    --tan: #F0E8DB;
+}
+
+body {
+    background-color: var(--tan);
+}
+
+.about-app {
+    padding: 50px 30px 50px 20px;
+}
+
+.intro {
+    padding-right: 40px;
+}
+
+img {
+    max-height: 200px;
+
+}
+
+.home h1 {
+    font-family: 'Pacifico';
+    letter-spacing: 0.5px;
+}
+
+.only-cooks {
+    color: var(--orange);
+}
+
+.custom-shape-divider-bottom-1669850492 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1669850492 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 123px;
+}
+
+.custom-shape-divider-bottom-1669850492 .shape-fill {
+    fill: var(--orange);
+}
