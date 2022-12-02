@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Auth from "./pages/Auth";
 import About from "./pages/About";
 import Recipes from "./pages/Recipes";
+import MyRecipes from "./pages/MyRecipes";
 import "./styles/Auth.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
@@ -24,6 +25,7 @@ function App() {
           <Route path="auth" element={<Auth />} />
           <Route path="about" element={<About />} />
           <Route path="recipes" element={<Recipes />} />
+          <Route path="myrecipes" element={<MyRecipes />} />
         </Routes>
         <Footer />
       </Router>

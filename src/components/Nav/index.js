@@ -31,7 +31,8 @@ function Nav() {
         <Link to="/"> Home </Link>
         <Link to="/auth"> Sign Up </Link>
         <Link to="/about"> About </Link>
-        <Link to="/recipes"> Recipes </Link>
+        <Link to="/recipes"> Add Recipe </Link>
+        <Link to="/myrecipes"> My Recipes </Link>
       </div>
     </div>
   );
