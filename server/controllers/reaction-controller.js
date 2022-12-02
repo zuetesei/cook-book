@@ -1,13 +1,13 @@
-const { reactionSchema, Recipe } = require('../models');
+const { Reaction, Recipe } = require('../models');
 
-const reactionSchemaController = {
-  addreactionSchema({ params, reaction }, res) {
+const reactionController = {
+  addReaction({ params, reaction }, res) {
     console.log(params);
-    reactionSchema.create(reaction)
+    Reaction.create(reaction)
       .then(({ _id }) => {
         return Recipe.findOneAndUpdate(
           { _id: params.recipeId },
-          { $push: { reactionSchemas: _id } },
+          { $push: { Reactions: _id } },
           { new: true }
         );
       })
@@ -22,16 +22,16 @@ const reactionSchemaController = {
       .catch(err => res.json(err));
   },
 
-  // remove reactionSchema
-  removereactionSchema({ params }, res) {
-    reactionSchema.findOneAndDelete({ _id: params.reactionSchemaId })
-      .then(deletedreactionSchema => {
-        if (!deletedreactionSchema) {
-          return res.status(404).json({ message: 'No reactionSchema with this id!' });
+  // remove Reaction
+  removeReaction({ params }, res) {
+    Reaction.findOneAndDelete({ _id: params.ReactionId })
+      .then(deletedReaction => {
+        if (!deletedReaction) {
+          return res.status(404).json({ message: 'No Reaction with this id!' });
         }
         return Recipe.findOneAndUpdate(
           { _id: params.recipeId },
-          { $pull: { reactionSchemas: params.reactionSchemaId } },
+          { $pull: { Reactions: params.ReactionId } },
           { new: true }
         );
       })
@@ -46,4 +46,4 @@ const reactionSchemaController = {
   },
 };
 
-module.exports = reactionSchemaController;
+module.exports = reactionController;
