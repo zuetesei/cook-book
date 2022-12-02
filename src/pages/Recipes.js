@@ -48,19 +48,8 @@ function Recipes() {
             </Form>
           </Col>
           <Col className="sm={4}">
-            <Form>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-              >
-                <Form.Label>Upload Photo:</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={10}
-                  placeholder="Upload photo of dish here!"
-                />
-              </Form.Group>
-            </Form>
+            <p>Upload a photo of your dish!</p>
+            <input type="file" />
           </Col>
         </Row>
       </Container>
