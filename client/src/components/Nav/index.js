@@ -12,10 +12,16 @@ function Nav() {
   }, [location]);
 
   return (
-
-    <div className='navbar' id={expandNavBar ? 'open' : 'close'}>
-      <div className='toggleButton'>
-        <button onClick={() => { setExpandNavBar((prev) => !prev); }}> < ReorderIcon /> </button>
+    <div className="navbar" id={expandNavBar ? "open" : "close"}>
+      <div className="toggleButton">
+        <button
+          onClick={() => {
+            setExpandNavBar((prev) => !prev);
+          }}
+        >
+          {" "}
+          <ReorderIcon />{" "}
+        </button>
       </div>
 
       <div className="links">

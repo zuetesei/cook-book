@@ -1,13 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {
-  ApolloProvider,
-  ApolloClient,
-  InMemoryCache,
-  createHttpLink
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context'
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
@@ -17,48 +10,43 @@ import SignUpForm from "./pages/Signup";
 import About from "./pages/About";
 import Recipes from "./pages/Recipes";
 import MyRecipes from "./pages/MyRecipes";
-
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Auth.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
-// import LoggedInNavbar from "./components/LoggedInNav";
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
-});
-
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
+  uri: 'http://localhost:3001/graphql',
 });
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: httpLink,
   cache: new InMemoryCache(),
 });
+
+// import LoggedInNavbar from "./components/LoggedInNav";
+
+
 
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="signup" element={<SignUpForm />} />
-          <Route path="about" element={<About />} />
-          <Route path="recipes" element={<Recipes />} />
-          <Route path="myrecipes" element={<MyRecipes />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </ApolloProvider >
+
+      <div className="app">
+        <Router>
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="signup" element={<SignUpForm />} />
+            <Route path="about" element={<About />} />
+            <Route path="recipes" element={<Recipes />} />
+            <Route path="myrecipes" element={<MyRecipes />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
+    </ApolloProvider>
   );
 }
 

@@ -28,10 +28,8 @@ const recipeSchema = new Schema(
   }
 );
 
-recipeSchema.virtual('reactionCount').get(function() {
+recipeSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
 
-const Recipe = model('Recipe', recipeSchema);
-
-module.exports = Recipe;
+module.exports = recipeSchema;
