@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import { FileUploader } from "../components/FileUploader";
 
 function Recipes() {
   return (
@@ -48,8 +49,9 @@ function Recipes() {
             </Form>
           </Col>
           <Col className="sm={4}">
-            <p>Upload a photo of your dish!</p>
-            <input type="file" />
+            {/* <p>Upload a photo of your dish!</p>
+            <input type="file" /> */}
+            <FileUploader />
           </Col>
         </Row>
       </Container>
