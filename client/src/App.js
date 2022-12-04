@@ -12,10 +12,25 @@ import MyRecipes from "./pages/MyRecipes";
 import "./styles/Auth.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
 // import LoggedInNavbar from "./components/LoggedInNav";
+
+
 
 function App() {
   return (
+    <ApolloProvider client={client}>
+
     <div className="app">
       <Router>
         <Nav />
@@ -30,6 +45,7 @@ function App() {
         <Footer />
       </Router>
     </div>
+    </ApolloProvider>
   );
 }
 

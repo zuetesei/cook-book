@@ -1,10 +1,35 @@
 import React, { useState } from "react"
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/Mutations';
+import { useQuery } from '@apollo/client';
+import { QUERY_USERS } from '../utils/Queries';
+
+
 
 function Auth() {
     let [authMode, setAuthMode] = useState('signup');
 
+    let [formData, setformData] = useState({username:'',email:'',password:''})
+    const [addUser, {data,error}] = useMutation(ADD_USER)
+
     const changeAuthMode = () => {
         setAuthMode(authMode === 'signin' ? 'signup' : 'signin')
+    }
+
+    
+
+    const sumbitHandler =  async(event)=>{
+        event.preventDefault()
+        const username = event.target.username.value
+        const email = event.target.email.value
+        const password = event.target.password.value
+        setformData(formData={username,email,password})
+        const res = await addUser({variables:formData})
+        
+
+
+
+
     }
 
     if (authMode === 'signin') {
@@ -25,6 +50,7 @@ function Auth() {
                                 type="email"
                                 className="form-control mt-1"
                                 placeholder="Enter email"
+                                name="email"
                             />
                         </div>
                         <div className="form-group mt-3">
@@ -33,6 +59,7 @@ function Auth() {
                                 type="password"
                                 className="form-control mt-1"
                                 placeholder="Enter password"
+                                name="password"
                             />
                         </div>
                         <div className="d-grid gap-2 mt-3">
@@ -51,7 +78,7 @@ function Auth() {
 
     return (
         <div className="Auth-form-container">
-            <form className="Auth-form">
+            <form className="Auth-form" onSubmit={sumbitHandler}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign Up</h3>
                     <div className="text-center">
@@ -63,9 +90,10 @@ function Auth() {
                     <div className="form-group mt-3">
                         <label>Full Name</label>
                         <input
-                            type="email"
+                            type="text"
                             className="form-control mt-1"
                             placeholder="e.g Jane Doe"
+                            name="username"
                         />
                     </div>
                     <div className="form-group mt-3">
@@ -74,6 +102,7 @@ function Auth() {
                             type="email"
                             className="form-control mt-1"
                             placeholder="Email Address"
+                            name="email"
                         />
                     </div>
                     <div className="form-group mt-3">
@@ -82,6 +111,7 @@ function Auth() {
                             type="password"
                             className="form-control mt-1"
                             placeholder="Password"
+                            name="password"
                         />
                     </div>
                     <div className="d-grid gap-2 mt-3">
