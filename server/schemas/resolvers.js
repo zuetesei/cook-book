@@ -19,7 +19,10 @@ const resolvers = {
           users: async()=>{
             const res = await User.find({})
             return res
-          }
+          },
+
+
+
          
           
       },
