@@ -2,7 +2,10 @@ import React from 'react';
 
 function About() {
     return (
-        <div> Thirsty Thursday </div>
+        <div>
+            <h1> Only Cooks  </h1>
+
+        </div>
     )
 }
 

@@ -13,15 +13,16 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-import SignUpForm from "./pages/Signup";
+import Signup from "./pages/Signup";
 import About from "./pages/About";
-import Recipes from "./pages/Recipes";
-import MyRecipes from "./pages/MyRecipes";
+// import Recipes from "./pages/Recipes";
+// import MyRecipes from "./pages/MyRecipes";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Auth.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
+import Auth from "./utils/auth";
 
 
 const httpLink = createHttpLink({
@@ -54,10 +55,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/signup" element={<SignUpForm />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
-          <Route path="/recipes" element={<Recipes />} />
-          <Route path="/myrecipes" element={<MyRecipes />} />
+          {/* <Route path="/recipes" element={<Recipes />} />
+          <Route path="/myrecipes" element={<MyRecipes />} /> */}
         </Routes>
         <Footer />
       </Router>

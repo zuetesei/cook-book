@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { LOGIN_USER } from '../utils/Mutations';
 import Auth from '../utils/auth';
 import Signup from '../pages/Signup';
 
@@ -45,7 +45,7 @@ const Login = (props) => {
     // if (authMode === 'signin') {}
     return (
         <div className="Auth-form-container">
-            <form className="Auth-form">
+            <form name="login" className="Auth-form">
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign In</h3>
                     <div className="text-center">
