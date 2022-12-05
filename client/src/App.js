@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloProvider,
@@ -7,22 +7,20 @@ import {
   createHttpLink
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context'
-
 import Nav from "./components/Nav";
+import LoggedInNav from "./components/LoggedInNav";
 import Footer from "./components/Footer";
-
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
 // import Recipes from "./pages/Recipes";
 // import MyRecipes from "./pages/MyRecipes";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Auth.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
-import Auth from "./utils/auth";
+// import Auth from "./utils/auth";
 
 
 const httpLink = createHttpLink({
@@ -33,8 +31,6 @@ const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache(),
 });
-
-// import LoggedInNavbar from "./components/LoggedInNav";
 
 
 const authLink = setContext((_, { headers }) => {
@@ -48,17 +44,18 @@ const authLink = setContext((_, { headers }) => {
 });
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Nav />
+        {isLoggedIn ? <LoggedInNav /> : <Nav />}
+        {/* <Nav /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/recipes" element={<Recipes />} />
-          <Route path="/myrecipes" element={<MyRecipes />} /> */}
         </Routes>
         <Footer />
       </Router>
