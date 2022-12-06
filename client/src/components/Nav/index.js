@@ -33,7 +33,7 @@ function Nav() {
         <Link to="/about"> About </Link>
         {/* <Link to="/recipes"> Add Recipe </Link> */}
         {/* <Link to="/myrecipes"> My Recipes </Link> */}
-        <Link to="/friends"> Friends </Link>
+        {/* <Link to="/friends"> Friends </Link> */}
       </div>
     </div>
   );

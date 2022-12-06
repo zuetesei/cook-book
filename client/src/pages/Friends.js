@@ -12,7 +12,7 @@ function Friends() {
     <div>
       {" "}
       test
-      {/* <FriendList /> */}
+      <FriendList />
       <AddForm />
     </div>
   );
