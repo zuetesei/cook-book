@@ -1,5 +1,6 @@
 import React from "react";
 import FriendList from "../components/FriendList";
+import AddForm from "../components/AddForm";
 import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -11,7 +12,8 @@ function Friends() {
     <div>
       {" "}
       test
-      <FriendList />
+      {/* <FriendList /> */}
+      <AddForm />
     </div>
   );
 }
