@@ -2,7 +2,7 @@ import React from "react";
 
 import NavLinks from "./components/LoggedInNav";
 
-export default class UserList extends React.Component {
+export default class RecipeList extends React.Component {
     render() {
         let style = {
             display: "grid",
@@ -15,20 +15,20 @@ export default class UserList extends React.Component {
             <div>
                 <NavLinks />
                 <ul style={style}>
-                    {this.props.list.map(user => {
+                    {this.props.list.map(recipe => {
                         return (
-                            <li key={user.id}>
+                            <li key={recipe.id}>
                                 <div>
-                                    <img className="thumb" alt="" src={user._links.avatar.href} />
+                                    <img className="thumb" alt="" src={recipe._links.avatar.href} />
                                 </div>
 
                                 <div className="userInfo">
                                     <p>
-                                        {recipe.title}
+                                        {recipe.name}
                                     </p>
                                 </div>
-                                <button onClick={() => this.props.addFriend(user)}>
-                                    Subscribe to this user
+                                <button onClick={() => this.props.saveRecipe(recipe)}>
+                                    Add Recipe to Favorites
                                 </button>
                             </li>
                         );
