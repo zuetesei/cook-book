@@ -17,7 +17,7 @@ import About from "./pages/About";
 // import Recipes from "./pages/Recipes";
 // import MyRecipes from "./pages/MyRecipes";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/Auth.css";
+import "./styles/Signup.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
 // import Auth from "./utils/auth";

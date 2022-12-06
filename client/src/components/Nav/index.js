@@ -20,9 +20,9 @@ function Nav() {
 
       <div className="links">
         <Link to="/"> <img className="logo" src={Logo} alt="company logo" /> </Link>
-        <Link id="nav" to="/"> <span title="Home"> Home </span> </Link>
-        <Link id="nav" to="/signup"> <span title="Sign Up"> Sign Up </span> </Link>
-        <Link id="nav" to="/about"> <span title="About"> About </span> </Link>
+        <Link id="cubic" to="/"> <span title="Home"> Home </span> </Link>
+        <Link id="cubic" to="/signup"> <span title="Sign Up"> Sign Up </span> </Link>
+        <Link id="cubic" to="/about"> <span title="About"> About </span> </Link>
         {/* <Link to="/recipes"> Add Recipe </Link>
         <Link to="/myrecipes"> My Recipes </Link> */}
       </div>

@@ -100,7 +100,7 @@
 CUBIC BUTTON
 * * * * * * * * */
 
-#nav {
+#cubic {
     display: inline-block;
     text-align: center;
     text-transform: uppercase;
@@ -113,8 +113,8 @@ CUBIC BUTTON
 }
 
 
-#nav:before,
-#nav:after {
+#cubic:before,
+#cubic:after {
     width: 4.4em;
     height: 2.95em;
     position: absolute;
@@ -127,7 +127,7 @@ CUBIC BUTTON
     z-index: -1;
 }
 
-#nav span {
+#cubic span {
     display: block;
     background: var(--white);
     padding: 20px 50px;
@@ -150,7 +150,7 @@ CUBIC BUTTON
     transform-style: preserve-3d;
 }
 
-#nav:hover span {
+#cubic:hover span {
     background: var(--orange);
     -webkit-transform: translate3d(0px, 0px, -60px) rotateX(90deg);
     -moz-transform: translate3d(0px, 0px, -60px) rotateX(90deg);
@@ -159,7 +159,7 @@ CUBIC BUTTON
     transform: translate3d(0px, 0px, -60px) rotateX(90deg);
 }
 
-#nav span:after {
+#cubic span:after {
     content: attr(title);
     display: block;
     width: 100%;
@@ -181,6 +181,6 @@ CUBIC BUTTON
     transform: translate3d(0px, 100%, 0) rotateX(-90deg);
 }
 
-#nav:hover span:after {
+#cubic:hover span:after {
     background: var(--tan);
 }
