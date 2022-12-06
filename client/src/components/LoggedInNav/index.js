@@ -20,7 +20,7 @@ function LoggedInNavbar() {
                 <Link to='/myrecipes'> My Recipes </Link>
                 {/* <Link to="/recipes"> Add Recipe </Link> */}
                 <Link to='/profile'> Profile </Link>
-                Logout
+                <button> Logout </button>
             </div>
         </div>
     );
