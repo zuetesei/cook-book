@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { ADD_USER } from '../utils/Mutations';
 import Auth from '../utils/auth';
 import Login from '../pages/Login';
 
@@ -28,13 +28,7 @@ function SignUpForm() {
         }
     };
 
-    // let [authMode, setAuthMode] = useState('signup');
 
-    // const changeAuthMode = () => {
-    //     setAuthMode(authMode === 'signin' ? 'signup' : 'signin')
-    // }
-
-    // if (authMode === 'signup') { }
 
     return (
         <div className="Auth-form-container">

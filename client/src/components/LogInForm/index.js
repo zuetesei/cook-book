@@ -6,7 +6,7 @@ function LogInForm() {
     return (
         <div class="logform Auth-form-home">
             <h2> Log In to See What's Cookin 🍳 </h2>
-            <Form>
+            <Form className='loginForm'>
                 <Form.Group className='mb-3' controlId='formGroupEmail'>
                     <Form.Label> Email Address: </Form.Label>
                     <Form.Control type='email' placeholder='Your Email' />
@@ -15,7 +15,7 @@ function LogInForm() {
                     <Form.Label> Password: </Form.Label>
                     <Form.Control type='password' placeholder='Your Password' />
                 </Form.Group>
-                <Button type='submit' className="btn btn-primary"> Log In </Button>
+                <Button id='cubic' type='submit' className="btn btn-primary"> Log In </Button>
             </Form>
         </div>
     );
