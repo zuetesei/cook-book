@@ -12,19 +12,46 @@ function Nav() {
   }, [location]);
 
   return (
-
-    <div className='navbar' id={expandNavBar ? 'open' : 'close'}>
-      <div className='toggleButton'>
-        <button onClick={() => { setExpandNavBar((prev) => !prev); }}> < ReorderIcon /> </button>
+    <div className="navbar" id={expandNavBar ? "open" : "close"}>
+      <div className="toggleButton">
+        <button
+          onClick={() => {
+            setExpandNavBar((prev) => !prev);
+          }}
+        >
+          {" "}
+          <ReorderIcon />{" "}
+        </button>
       </div>
 
       <div className="links">
-        <Link to="/"> <img className="logo" src={Logo} alt="company logo" /> </Link>
-        <Link id="cubic" to="/"> <span title="Home"> Home </span> </Link>
-        <Link id="cubic" to="/signup"> <span title="Sign Up"> Sign Up </span> </Link>
-        <Link id="cubic" to="/about"> <span title="About"> About </span> </Link>
+        <Link to="/">
+          {" "}
+          <img className="logo" src={Logo} alt="company logo" />{" "}
+        </Link>
+        <Link id="cubic" to="/">
+          {" "}
+          <span title="Home"> Home </span>{" "}
+        </Link>
+        <Link id="cubic" to="/signup">
+          {" "}
+          <span title="Sign Up"> Sign Up </span>{" "}
+        </Link>
+        <Link id="cubic" to="/about">
+          {" "}
+          <span title="About"> About </span>{" "}
+        </Link>
         {/* <Link to="/recipes"> Add Recipe </Link>
         <Link to="/myrecipes"> My Recipes </Link> */}
+        <div className="logo">
+          <img src={Logo} alt="company logo" />
+        </div>
+        <Link to="/"> Home </Link>
+        <Link to="/signup"> Sign Up </Link>
+        <Link to="/about"> About </Link>
+        {/* <Link to="/recipes"> Add Recipe </Link> */}
+        {/* <Link to="/myrecipes"> My Recipes </Link> */}
+        {/* <Link to="/friends"> Friends </Link> */}
       </div>
     </div>
   );
