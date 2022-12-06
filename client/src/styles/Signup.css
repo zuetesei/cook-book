@@ -1,3 +1,9 @@
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #55433B;
+}
+
 .Auth-form-container {
     display: flex;
     justify-content: center;
@@ -9,18 +15,11 @@
 
 .Auth-form {
     width: 420px;
-    box-shadow: rgb(33.3 26.3 23 / 86%) 1px 1px 10px;
-    padding-top: 30px;
+    box-shadow: rgba(126, 55, 29, 0.86) 1px 1px 10px;
+    padding-top: 25px;
     padding-bottom: 20px;
-    border-radius: 8px;
-    background-color: #F0E8DB;
-}
-
-.Auth-form-home {
-    box-shadow: rgb(33.3 26.3 23 / 36%) 1px 1px 10px;
-    padding: 30px 12px 20px 12px;
-    border-radius: 8px;
-    background-color: #F3F3F3;
+    border-radius: 12px;
+    background-color: var(--tan);
 }
 
 .Auth-form-content {
@@ -32,20 +31,14 @@
     text-align: center;
     margin-bottom: 1em;
     font-size: 24px;
-    color: #55433B;
+    color: var(--brown);
     font-weight: 800;
 }
 
 .form-control {
-    background-color: #F3F3F3;
+    background-color: var(--white);
 }
 
 a {
     color: #000000;
-}
-
-label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #55433B;
 }

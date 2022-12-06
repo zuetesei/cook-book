@@ -17,8 +17,10 @@ function LoggedInNavbar() {
             </div>
             <div className='links'>
                 <Link to='/'> Dahsboard </Link>
-                <Link to='/recipes'> My Recipes </Link>
+                <Link to='/myrecipes'> My Recipes </Link>
+                {/* <Link to="/recipes"> Add Recipe </Link> */}
                 <Link to='/profile'> Profile </Link>
+                <button> Logout </button>
             </div>
         </div>
     );
