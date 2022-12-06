@@ -4,9 +4,9 @@ import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
-  createHttpLink
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context'
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -17,15 +17,15 @@ import SignUpForm from "./pages/Signup";
 import About from "./pages/About";
 import Recipes from "./pages/Recipes";
 import MyRecipes from "./pages/MyRecipes";
+import Friends from "./pages/Friends";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Auth.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
 
-
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: "http://localhost:3001/graphql",
 });
 
 const client = new ApolloClient({
@@ -35,13 +35,12 @@ const client = new ApolloClient({
 
 // import LoggedInNavbar from "./components/LoggedInNav";
 
-
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -58,10 +57,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/myrecipes" element={<MyRecipes />} />
+          <Route path="/friends" element={<Friends />} />
         </Routes>
         <Footer />
       </Router>
-    </ApolloProvider >
+    </ApolloProvider>
   );
 }
 
