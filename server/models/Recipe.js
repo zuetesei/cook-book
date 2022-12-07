@@ -19,7 +19,7 @@ const recipeSchema = new Schema(
       type: String,
       required: true
     },
-    reactions: [reactionSchema]
+    // reactions: [reactionSchema]
   },
   {
     toJSON: {
@@ -32,4 +32,5 @@ recipeSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
 
-module.exports = recipeSchema;
+const Recipe = model('Recipe', recipeSchema)
+module.exports = Recipe;
