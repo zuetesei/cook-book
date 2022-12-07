@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import LoggedStatus from "../components/LogInForm";
+import LogInForm from "../components/LogInForm";
 import "../styles/Home.css";
 import Illustration from "../assets/cooks.jpg";
 
@@ -37,7 +37,7 @@ function Home() {
             </div>
           </Col>
           <Col sm={6}>
-            <LoggedStatus />
+            <LogInForm />
           </Col>
         </Row>
       </Container>
