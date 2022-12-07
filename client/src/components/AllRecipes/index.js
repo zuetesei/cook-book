@@ -5,15 +5,15 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-function SubscribersList(props) {
+function AllRecipes() {
   return (
-    <div className="subscribers">
-      <Container className="friend">
+    <div>
+      <Container className="cont-flex">
         <div>
-          <h1> Friends </h1>
+          <h2> Community feed: </h2>
           <InputGroup className="mb-3">
             <Form.Control
-              placeholder="Find Friends"
+              placeholder="Search All Recipes"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
@@ -42,4 +42,4 @@ function SubscribersList(props) {
   );
 }
 
-export default SubscribersList;
+export default AllRecipes;

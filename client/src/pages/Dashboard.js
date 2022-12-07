@@ -1,34 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import '../styles/Navbar.css';
+import "../styles/Dashboard.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import UserRecipes from "../components/UserRecipes";
+import AllRecipes from "../components/AllRecipes";
 // import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
 function Dashboard() {
-    return (
-        <div className='dashboard'>
-            <Container>
-                <Row>
-                    <Col className='userFeed'>
-                        <h2> Hot Recipes </h2>
-                    </Col>
-                    <Col className='userInfo'>
-                        <h2> @LOVE.ZUE </h2>
-                        {/* <button> <NoteAddIcon /> </button> */}
-                        <h3> My Recipes </h3>
-                        <ul>
-                            <li> Recipe 1 </li>
-                            <li> Recipe 2 </li>
-                            <li> Recipe 3 </li>
-                            <li> Recipe 4 </li>
-                        </ul>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-    )
+  return (
+    <div>
+      <Container className="dashboard">
+        <Row className="row">
+          <Col className="userFeed">
+            <AllRecipes />
+          </Col>
+          <Col className="userInfo">
+            <UserRecipes />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 }
 
 export default Dashboard;
