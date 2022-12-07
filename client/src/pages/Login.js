@@ -24,6 +24,8 @@ const Login = (props) => {
     // submit form
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        // event.target.reset()
+        console.log('running')
 
         try {
             const { data } = await login({
@@ -45,7 +47,7 @@ const Login = (props) => {
     // if (authMode === 'signin') {}
     return (
         <div className="Auth-form-container">
-            <form name="login" className="Auth-form">
+            <form name="login" className="Auth-form" onSubmit={handleFormSubmit}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign In</h3>
                     <div className="text-center">
@@ -60,6 +62,7 @@ const Login = (props) => {
                             type="email"
                             className="form-control mt-1"
                             placeholder="Enter email"
+                            name='email'
                         />
                     </div>
                     <div className="form-group mt-3">
@@ -68,6 +71,7 @@ const Login = (props) => {
                             type="password"
                             className="form-control mt-1"
                             placeholder="Enter password"
+                            name='password'
                         />
                     </div>
                     <div className="d-grid gap-2 mt-3">
