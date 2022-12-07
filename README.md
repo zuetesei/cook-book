@@ -1,4 +1,4 @@
-# Cook-Book
+# OnlyCooks
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-Cook-Book is a blogging site that helps to connect people who are interested in cooking, creating, and sharing recipes! Come dicuss anything with your fellow chefs about any types of cuisine, anytime, any place, for any reason!
+OnlyCooks is a blogging site that helps to connect people who are interested in cooking, creating, and sharing recipes! Come dicuss anything with your fellow chefs about any types of cuisine, anytime, any place, for any reason!
 
 ---
 
@@ -30,6 +30,7 @@ Cook-Book is a blogging site that helps to connect people who are interested in 
 <img src="https://icon2.cleanpng.com/20180425/xeq/kisspng-node-js-javascript-web-application-express-js-comp-5ae0f84de7b809.1939946215246930699491.jpg" width="100" height="100">
 <img src="https://miro.medium.com/max/1160/0*skYUWg3ZvcY8xRf5" width="100" height="100">
 <img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/heroku_icon_130912.png" width="100" height="100">
+<img src="https://user-images.githubusercontent.com/43313420/105893220-1bae8780-6013-11eb-87be-eeac845ecc6f.png" width="100" height="100">
 
 ---
 
@@ -68,13 +69,13 @@ If you have any questions, please contact us at:
 | ----------- | ----------- | ----------- |
 
 | Zue Tesei | [@zuetesei](https://github.com/zuetesei) | zuleikatesei@gmail.com |
-  
+
 | Dennis Jackson | [@monkeyd87](https://github.com/monkeyd87) | Dennisdjack1987@gmail.com |
-  
+
 | Ryan Hickey | [@ryanpjhickey](https://github.com/ryanpjhickey) | ryanpjhickey@gmail.com |
-  
+
 | Huy Nguyen | [@idahuy](https://github.com/idahuy) | huygnguyen@outlook.com |
-  
+
 | Jonathon Biala | [@jonathonb1](https://github.com/jonathonb1) | jonathon.biala@gmail.com |
-  
+
 =======

@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+import React from "react";
+
+function About() {
+  return <div> Thirsty Thursday</div>;
+=======
 import React from 'react';
 import OnlyCooks from '../assets/onlycooks.png';
 import '../styles/About.css';
@@ -18,6 +24,7 @@ function About() {
             <a href="https://github.com/zuetesei"> Zue Tesei </a>
         </div>
     )
+>>>>>>> main
 }
 
-export default About; 
+export default About;
