@@ -92,6 +92,21 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/myrecipes" element={<MyRecipes />} />
+          <Route path="/friends" element={<Friends />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </ApolloProvider >
+  )
+};
+
+
+export default App;
+
+
+/*
           <Route
             path="/"
             exact
@@ -103,18 +118,4 @@ function App() {
             path="/favorites"
             render={() => <FavoriteList favorites={this.state.favorites} />}
           />
-         // <Route path="/recipes" element={<Recipes />} />
-         // <Route path="/myrecipes" element={<MyRecipes />} />
-         // <Route path="/friends" element={<Friends />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </ApolloProvider >
-        </Routes>
-        <Footer />
-      </Router>
-    </ApolloProvider>
-  );
-};
-
-export default App;
+*/
