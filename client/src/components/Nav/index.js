@@ -41,17 +41,6 @@ function Nav() {
           {" "}
           <span title="About"> About </span>{" "}
         </Link>
-        {/* <Link to="/recipes"> Add Recipe </Link>
-        <Link to="/myrecipes"> My Recipes </Link> */}
-        <div className="logo">
-          <img src={Logo} alt="company logo" />
-        </div>
-        <Link to="/"> Home </Link>
-        <Link to="/signup"> Sign Up </Link>
-        <Link to="/about"> About </Link>
-        {/* <Link to="/recipes"> Add Recipe </Link> */}
-        {/* <Link to="/myrecipes"> My Recipes </Link> */}
-        {/* <Link to="/friends"> Friends </Link> */}
       </div>
     </div>
   );

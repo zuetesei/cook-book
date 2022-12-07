@@ -15,11 +15,11 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
-import FriendsList from "./utils/Friends"
-import UserList from "./utils/UserList"
-import axios from "axios";
+// import FriendsList from "./utils/Friends";
+// import UserList from "./utils/UserList";
+// import axios from "axios";
 import Recipes from "./pages/Recipes";
-import MyRecipes from "./pages/MyRecipes";
+import MyRecipes from "./pages/UserRecipes";
 import Friends from "./pages/Friends";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Signup.css";
@@ -51,36 +51,6 @@ const authLink = setContext((_, { headers }) => {
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  addFavorite = favorite => {
-    const { favorites } = this.state;
-
-    if (!favorites.some(alreadyFavorite => alreadyFavorite.id == favorite.id)) {
-      this.setState({
-        favorites: [...this.state.favorites, favorite]
-      });
-    }
-  };
-
-  getList = async () => {
-    const api =
-      "USERLIST_API_NECESSARY";
-
-    await axios
-      .get(api)
-      .then(response => {
-        this.setState({
-          list: response.data.result
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
-  // componentDidMount(); {
-  //   this.getList();
-  // }
 
   return (
     <ApolloProvider client={client}>
