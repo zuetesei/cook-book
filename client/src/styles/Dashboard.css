@@ -23,6 +23,19 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 50px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  font-family: "Pacifico";
+  margin-top: 20px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
 }

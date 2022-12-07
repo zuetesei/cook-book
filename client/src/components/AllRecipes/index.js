@@ -10,7 +10,7 @@ function AllRecipes() {
     <div>
       <Container className="cont-flex">
         <div>
-          <h2> Community feed: </h2>
+          <h2> 🔥 Community Feed 🔥 </h2>
           <InputGroup className="mb-3">
             <Form.Control
               placeholder="Search All Recipes"

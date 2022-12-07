@@ -11,6 +11,7 @@ import AllRecipes from "../components/AllRecipes";
 function Dashboard() {
   return (
     <div>
+      <h1>Dashboard</h1>
       <Container className="dashboard">
         <Row className="row">
           <Col className="userFeed">

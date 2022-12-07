@@ -10,7 +10,7 @@ function UserRecipes(props) {
     <div>
       <Container>
         <div>
-          <h2> (username's) Recipes: </h2>
+          <h2> 🧂(username's) Recipes🧂 </h2>
           <InputGroup className="mb-3">
             <Form.Control
               placeholder="Search My Recipes"
