@@ -41,6 +41,7 @@ function LogInForm() {
                     <Form.Control type='password' placeholder='Your Password'  name='password'/>
                 </Form.Group>
                 <Button id='cubic' type='submit' className="btn btn-primary"> Log In </Button>
+                <Button id='cubic' type='submit' className="btn btn-primary" href='/signup'> Sign Up </Button>
             </Form>
         </div>
     );
