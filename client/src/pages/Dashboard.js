@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import UserRecipes from '../components/UserRecipes';
 import AddForm from '../components/AddForm';
+import AllRecipes from '../components/AllRecipes';
 // import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
 function Dashboard() {
@@ -14,7 +15,7 @@ function Dashboard() {
             <Container>
                 <Row>
                     <Col sm={8} className='userFeed'>
-                        <h2> Hot Recipes </h2>
+                        <AllRecipes />
                     </Col>
                     <Col sm={4} className='userInfo'>
                         <UserCard />

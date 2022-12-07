@@ -47,13 +47,7 @@ function AddFormModal() {
               <Form.Label> Instructions </Form.Label>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label> Any special notes about this dish? </Form.Label>
-              <Form.Control as="textarea" rows={3} />
-            </Form.Group>
+
             <div>
               <form method="post" action="#" id="#">
                 <div class="form-group files">

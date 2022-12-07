@@ -13,16 +13,16 @@ const typeDefs = gql`
 
   type Recipe {
     _id: ID
-    RecipeText: String
+    recipeName: String
+    recipeText: String
     createdAt: String
     username: String
-    reactionCount: Int
-    reactions: [Reaction]
+    favoriteCount: Int
+    favorites: [Reaction]
   }
 
-  type Reaction {
+  type Favorite {
     _id: ID
-    reactionBody: String
     createdAt: String
     username: String
   }
