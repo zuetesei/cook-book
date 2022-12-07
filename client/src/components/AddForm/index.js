@@ -20,7 +20,7 @@ function AddFormModal() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        {/* <LibraryAddIcon /> */}
+        Add New!
       </Button>
 
       <Modal show={show} onHide={handleClose}>

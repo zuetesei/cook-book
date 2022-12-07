@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
-function Recipes() {
+function SingleRecipe() {
   return (
     <div className="recipe">
       <Container Classname="recipeform">
@@ -48,8 +48,7 @@ function Recipes() {
             </Form>
           </Col>
           <Col className="sm={4}">
-            <p>Upload a photo of your dish!</p>
-            <input type="file" />
+            <p> Attachments: </p>
           </Col>
         </Row>
       </Container>
@@ -57,4 +56,4 @@ function Recipes() {
   );
 }
 
-export default Recipes;
+export default SingleRecipe;

@@ -6,7 +6,6 @@ import {
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
-
 import { setContext } from "@apollo/client/link/context";
 import Nav from "./components/Nav";
 import LoggedInNav from "./components/LoggedInNav";
@@ -15,12 +14,9 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
-// import FriendsList from "./utils/Friends";
-// import UserList from "./utils/UserList";
-// import axios from "axios";
-import Recipes from "./pages/Recipes";
-import MyRecipes from "./pages/UserRecipes";
-import Friends from "./pages/Friends";
+import Recipe from "./pages/SingleRecipe";
+import SavedRecipes from "./pages/UserRecipes";
+import Profile from "./pages/Profile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Signup.css";
 import "./styles/Navbar.css";
@@ -35,8 +31,6 @@ const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache(),
 });
-
-// import LoggedInNavbar from "./components/LoggedInNav";
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
@@ -62,9 +56,9 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
-          <Route path="/recipes" element={<Recipes />} />
-          <Route path="/myrecipes" element={<MyRecipes />} />
-          <Route path="/friends" element={<Friends />} />
+          <Route path="/recipe/id" element={<Recipe />} />
+          <Route path="/savedrecipes" element={<SavedRecipes />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </Router>

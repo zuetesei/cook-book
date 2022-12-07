@@ -1,17 +1,18 @@
 import React from 'react';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 function UserRecipes() {
     return (
-        <div className='favRecipes'>
-            <h1> <MenuBookIcon /> My Recipes </h1>
-            <ul>
-                <li> Recipe 1 </li>
-                <li> Recipe 2 </li>
-                <li> Recipe 3 </li>
-                <li> Recipe 4 </li>
-            </ul>
-        </div>
+        <Card style={{ width: '18rem' }}>
+            <Card.Header> My Recipes </Card.Header>
+            <ListGroup variant="flush">
+                <ListGroup.Item> Recipe 1 </ListGroup.Item>
+                <ListGroup.Item> Recipe 2 </ListGroup.Item>
+                <ListGroup.Item> Recipe 3 </ListGroup.Item>
+            </ListGroup>
+        </Card>
     )
 }
 

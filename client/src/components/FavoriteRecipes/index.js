@@ -1,17 +1,18 @@
 import React from 'react';
-import SavedSearchIcon from '@mui/icons-material/SavedSearch';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+// import SavedSearchIcon from '@mui/icons-material/SavedSearch';
 
 function FavoriteRecipes() {
     return (
-        <div className='favRecipes'>
-            <h1> <SavedSearchIcon /> Favorite Recipes </h1>
-            <ul>
-                <li> Recipe 1 </li>
-                <li> Recipe 2 </li>
-                <li> Recipe 3 </li>
-                <li> Recipe 4 </li>
-            </ul>
-        </div>
+        <Card style={{ width: '18rem' }}>
+            <Card.Header> Favorite Recipes </Card.Header>
+            <ListGroup variant="flush">
+                <ListGroup.Item> Recipe 1 </ListGroup.Item>
+                <ListGroup.Item> Recipe 2 </ListGroup.Item>
+                <ListGroup.Item> Recipe 3 </ListGroup.Item>
+            </ListGroup>
+        </Card>
     )
 }
 

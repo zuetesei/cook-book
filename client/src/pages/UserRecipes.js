@@ -1,25 +1,24 @@
 import React from "react";
 import "../styles/Myrecipes.css";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+// import Button from "react-bootstrap/Button";
+// import { Link } from "react-router-dom";
+import AddForm from "../components/AddForm";
+import FavoriteRecipes from "../components/FavoriteRecipes";
+import UserRecipes from "../components/UserRecipes";
 
 function Recipes() {
   return (
     <div className="recipe">
       <Container>
-        <Link to="/recipes">
-          <Button variant="primary" size="lg">
-            Add a recipe!
-          </Button>
-        </Link>
+        <AddForm />
       </Container>
       <div className="flex-container">
         <div className="favsection" id="favsection">
-          My Favorites:
+          <FavoriteRecipes />
         </div>
         <div className="myrecipes" id="myrecipes">
-          My Recipes:
+          <UserRecipes />
         </div>
       </div>
     </div>
