@@ -5,12 +5,12 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         me: async (parent, args, context) => {
-            if (context.user) {
+          if (context.user) {
               const userData = await User.findOne({ _id: context.user._id })
                 .select('-__v -password')
                 .populate('recipes')
                 .populate('friends');
-          
+
               return userData;
             }
           
@@ -29,12 +29,9 @@ const resolvers = {
           recipe: async (parent, { _id }) => {
             return Recipe.findOne({ _id });
           }
-
-
-
-         
-          
-      },
+        
+        },
+        
   Mutation: {
     addUser: async (parent, args) => {
         const user = await User.create(args);
@@ -69,6 +66,7 @@ const resolvers = {
             { new: true }
           );
       
+          
           return recipe;
         }
       
