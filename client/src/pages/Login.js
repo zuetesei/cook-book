@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
-import Auth from "../utils/auth";
-import Signup from "../pages/Signup";
-=======
 import React, { useState } from "react"
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/Mutations';
 import Auth from '../utils/auth';
 import Signup from '../pages/Signup';
->>>>>>> main
 
 const Login = (props) => {
   const [formState, setFormState] = useState({
@@ -38,10 +30,11 @@ const Login = (props) => {
         variables: { ...formState },
       });
 
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
-    }
+    // submit form
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        // event.target.reset()
+        console.log('running')
 
     // clear form values
     setFormState({
@@ -50,44 +43,6 @@ const Login = (props) => {
     });
   };
 
-<<<<<<< HEAD
-  // if (authMode === 'signin') {}
-  return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
-          <div className="text-center">
-            Not registered yet?{" "}
-            <span className="link-primary" onClick={Signup}>
-              Sign Up
-            </span>
-          </div>
-          <div className="form-group mt-3">
-            <label>Email address</label>
-            <input
-              type="email"
-              className="form-control mt-1"
-              placeholder="Enter email"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control mt-1"
-              placeholder="Enter password"
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-          <p className="text-center mt-2">
-            Forgot <a href="#">password?</a>
-          </p>
-=======
             Auth.login(data.login.token);
         } catch (e) {
             console.error(e);
@@ -103,7 +58,7 @@ const Login = (props) => {
     // if (authMode === 'signin') {}
     return (
         <div className="Auth-form-container">
-            <form name="login" className="Auth-form">
+            <form name="login" className="Auth-form" onSubmit={handleFormSubmit}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign In</h3>
                     <div className="text-center">
@@ -118,6 +73,7 @@ const Login = (props) => {
                             type="email"
                             className="form-control mt-1"
                             placeholder="Enter email"
+                            name='email'
                         />
                     </div>
                     <div className="form-group mt-3">
@@ -126,6 +82,7 @@ const Login = (props) => {
                             type="password"
                             className="form-control mt-1"
                             placeholder="Enter password"
+                            name='password'
                         />
                     </div>
                     <div className="d-grid gap-2 mt-3">
@@ -139,7 +96,6 @@ const Login = (props) => {
                 </div>
             </form>
             {error && <div>Login failed</div>}
->>>>>>> main
         </div>
       </form>
       {error && <div>Login failed</div>}
