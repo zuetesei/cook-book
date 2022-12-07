@@ -60,6 +60,7 @@ const resolvers = {
       },
       addRecipe: async (parent, args, context) => {
         if (context.user) {
+          
           const recipe = await Recipe.create({ ...args, username: context.user.username });
       
           await User.findByIdAndUpdate(

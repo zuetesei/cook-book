@@ -14,9 +14,7 @@ const typeDefs = gql`
 
   type Recipe {
     _id: ID
-    recipeName: String
-    recipeText: String
-    ingredients:String
+    RecipeText: String
     createdAt: String
     username: String
     favoriteCount: Int
@@ -33,14 +31,14 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    recipes(username:String):[Recipe]
-    recipe(_id: ID!): Recipe
+    Recipes(username: String): [Recipe]
+    Recipe(_id: ID!): Recipe
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addRecipe(recipeText: String!, recipeName: String! ingredients:String!): Recipe
+    addRecipe(recipeText: String!): Recipe
     addReaction(RecipeId: ID!, reactionBody: String!): Recipe
     addFriend(friendId: ID!): User
   }
