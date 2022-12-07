@@ -118,4 +118,18 @@ export default App;
             path="/favorites"
             render={() => <FavoriteList favorites={this.state.favorites} />}
           />
-*/
+         // <Route path="/recipes" element={<Recipes />} />
+         // <Route path="/myrecipes" element={<MyRecipes />} />
+         // <Route path="/friends" element={<Friends />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </ApolloProvider >
+        </Routes>
+        <Footer />
+      </Router>
+    </ApolloProvider>
+  );
+};
+
+export default App;
