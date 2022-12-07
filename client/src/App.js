@@ -17,7 +17,7 @@ import Signup from "./pages/Signup";
 import About from "./pages/About";
 import FriendsList from "./utils/Friends"
 import UserList from "./utils/UserList"
-import axios from "axios";
+// import axios from "axios";
 import Recipes from "./pages/Recipes";
 import MyRecipes from "./pages/MyRecipes";
 import Friends from "./pages/Friends";
@@ -52,7 +52,7 @@ const authLink = setContext((_, { headers }) => {
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  addFavorite = favorite => {
+  let addFavorite = favorite => {
     const { favorites } = this.state;
 
     if (!favorites.some(alreadyFavorite => alreadyFavorite.id == favorite.id)) {
