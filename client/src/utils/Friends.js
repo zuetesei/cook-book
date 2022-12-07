@@ -10,12 +10,12 @@ export default class FavoriteList extends React.Component {
     }
 
     render() {
-        const { favorites } = this.props;
+        const { friends } = this.props;
         return (
             <div>
                 <NavLinks />
                 <ul>
-                    {favorites.map(user => {
+                    {friends.map(user => {
                         return (
                             <li key={user.id}>
                                 <div>

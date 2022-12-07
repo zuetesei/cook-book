@@ -24,7 +24,7 @@ export default class UserList extends React.Component {
 
                                 <div className="userInfo">
                                     <p>
-                                        {recipe.title}
+                                        {user.title}
                                     </p>
                                 </div>
                                 <button onClick={() => this.props.addFriend(user)}>
