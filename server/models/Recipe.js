@@ -10,6 +10,14 @@ const recipeSchema = new Schema(
       minlength: 1,
       maxlength: 280
     },
+    recipeName:{
+      type:String,
+      minlength:1,
+      maxlength:280
+    },
+    recipeIngredients:{
+      type: Array,
+    },
     createdAt: {
       type: Date,
       default: Date.now,

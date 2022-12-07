@@ -21,6 +21,11 @@ const resolvers = {
             return res
           },
 
+          Recipes: async ()=>{
+            const res = await Recipe.find({})
+            return res
+          }
+
 
 
          
@@ -51,6 +56,7 @@ const resolvers = {
       },
       addRecipe: async (parent, args, context) => {
         if (context.user) {
+          
           const recipe = await Recipe.create({ ...args, username: context.user.username });
       
           await User.findByIdAndUpdate(
