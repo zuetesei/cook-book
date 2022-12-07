@@ -32,5 +32,5 @@ recipeSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
 
-const Recipe = model('Recipe', recipeSchema)
+const Recipe = model('Recipe',recipeSchema)
 module.exports = Recipe;
