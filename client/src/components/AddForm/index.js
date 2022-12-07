@@ -19,7 +19,7 @@ function AddFormModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button className="my-3" variant="primary" onClick={handleShow}>
         Add New!
       </Button>
 
@@ -38,6 +38,7 @@ function AddFormModal() {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label> Ingredients </Form.Label>
+              <p> Seperate each ingredient with a comma.</p>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
             <Form.Group

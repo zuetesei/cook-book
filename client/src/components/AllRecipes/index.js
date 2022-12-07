@@ -2,10 +2,11 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
+
 function AllRecipes() {
     return (
-        <Card className="text-center">
-            <Card.Header> 🔥 New Recipes </Card.Header>
+        <Card>
+            <Card.Header> 🔥 Recipe Feed </Card.Header>
             <Card.Body>
                 <Card.Title> Recipe Name </Card.Title>
                 <Card.Text>
