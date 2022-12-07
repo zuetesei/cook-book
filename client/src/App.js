@@ -106,30 +106,3 @@ function App() {
 export default App;
 
 
-/*
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <UserList list={this.state.list} addFavorite={this.addFavorite} />
-            )}
-          />
-          <Route
-            path="/favorites"
-            render={() => <FavoriteList favorites={this.state.favorites} />}
-          />
-         // <Route path="/recipes" element={<Recipes />} />
-         // <Route path="/myrecipes" element={<MyRecipes />} />
-         // <Route path="/friends" element={<Friends />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </ApolloProvider >
-        </Routes>
-        <Footer />
-      </Router>
-    </ApolloProvider>
-  );
-};
-
-export default App;
