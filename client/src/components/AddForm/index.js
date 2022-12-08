@@ -51,12 +51,12 @@ function AddFormModal() {
 
             <div>
               <form method="post" action="#" id="#">
-                <div class="form-group files">
+                <div className="form-group files">
                   <label>Upload Your File </label>
                   <input
                     type="file"
                     onChange={onInputChange}
-                    class="form-control"
+                    className="form-control"
                     multiple=""
                   />
                 </div>
