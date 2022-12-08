@@ -44,23 +44,42 @@ const authLink = setContext((_, { headers }) => {
 });
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const { data } = useQuery(IS_LOGGED_IN)
 
-  return (
+  if (localStorage.getItem("id_token") === null)
+    return (
+      <ApolloProvider client={client}>
+        <Router>
+          {/* {data ? <LoggedInNav /> : <Nav />} */}
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </ApolloProvider >
+    )
+  else return (
     <ApolloProvider client={client}>
       <Router>
-        {isLoggedIn ? <LoggedInNav /> : <Nav />}
-        {/* <Nav /> */}
+        {/* {data ? <LoggedInNav /> : <Nav />} */}
+        <LoggedInNav />
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<LoggedInHomepage />} /> */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
+          {/* <Route path="/recipes" element={<Recipes />} /> */}
+          {/* <Route path="/myrecipes" element={<MyRecipes />} /> */}
+          {/* <Route path="/friends" element={<Friends />} /> */}
         </Routes>
         <Footer />
       </Router>
     </ApolloProvider >
-  );
+  )
 }
 
 export default App;

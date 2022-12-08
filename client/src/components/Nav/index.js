@@ -12,16 +12,16 @@ function Nav() {
   }, [location]);
 
   const logout = (e) => {
-        e.preventDefault();
-        console.log('Logout');
+    e.preventDefault();
+    console.log('Logout');
 
-        // CLEAR DATA FROM STORAGE
-        localStorage.clear();
-        sessionStorage.clear();
+    // CLEAR DATA FROM STORAGE
+    localStorage.clear();
+    sessionStorage.clear();
 
-        window.location.assign("/");
-    }
-    
+    window.location.assign("/");
+  }
+
   return (
 
     <div className='navbar' id={expandNavBar ? 'open' : 'close'}>
@@ -33,7 +33,7 @@ function Nav() {
         <Link to="/"> <img className="logo" src={Logo} alt="company logo" /> </Link>
         <Link id="cubic" to="/"> <span title="Home"> Home </span> </Link>
         <Link id="cubic" to="/about"> <span title="About"> About </span> </Link>
-        <Link id="cubic" to="#" onClick={logout}> Logout </Link>
+        <Link id="cubic" to="/Signup"> Sign Up </Link>
         {/* <Link to="/recipes"> Add Recipe </Link>
         <Link to="/myrecipes"> My Recipes </Link> */}
       </div>
