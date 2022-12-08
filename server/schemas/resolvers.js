@@ -1,6 +1,7 @@
 const { User, Recipe } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
@@ -20,11 +21,10 @@ const resolvers = {
             const res = await User.find({})
             return res
           },
-
-
-
-         
-          
+          checkout: async (parent, args, context) => {
+            const order = new Order({ products: args.products });
+            const { products } = await order.populate('products');
+          },
       },
   Mutation: {
     addUser: async (parent, args) => {

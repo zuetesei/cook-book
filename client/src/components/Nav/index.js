@@ -34,6 +34,7 @@ function Nav() {
         <Link id="cubic" to="/"> <span title="Home"> Home </span> </Link>
         <Link id="cubic" to="/about"> <span title="About"> About </span> </Link>
         <Link id="cubic" to="#" onClick={logout}> Logout </Link>
+        <Link id="cubic" to="/donate"> <span title="Donate"> Donate </span> </Link>
         {/* <Link to="/recipes"> Add Recipe </Link>
         <Link to="/myrecipes"> My Recipes </Link> */}
       </div>

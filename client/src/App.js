@@ -14,6 +14,8 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
+import Donate from "./pages/Donate";
+import CheckoutForm from "./pages/CheckoutForm";
 // import Recipes from "./pages/Recipes";
 // import MyRecipes from "./pages/MyRecipes";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,12 +29,6 @@ const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
 });
 
-const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache(),
-});
-
-
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   return {
@@ -41,6 +37,11 @@ const authLink = setContext((_, { headers }) => {
       authorization: token ? `Bearer ${token}` : '',
     },
   };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
 
 function App() {
@@ -56,6 +57,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/checkoutform" element={<CheckoutForm />} />
         </Routes>
         <Footer />
       </Router>
