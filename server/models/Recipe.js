@@ -10,6 +10,11 @@ const recipeSchema = new Schema(
       minlength: 1,
       maxlength: 280
     },
+    recipeName:{
+      type:String,
+      minLength:1,
+      maxlength:280
+    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -32,5 +37,5 @@ recipeSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
 
-const Recipe = model('Recipe', recipeSchema)
+const Recipe = model('Recipe',recipeSchema)
 module.exports = Recipe;

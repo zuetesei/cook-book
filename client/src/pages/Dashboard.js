@@ -8,9 +8,15 @@ import UserRecipes from '../components/UserRecipes';
 import AddForm from '../components/AddForm';
 import AllRecipes from '../components/AllRecipes';
 import '../styles/Dashboard.css'
+import Auth from '../utils/auth'
+import { useMutation } from '@apollo/client';
+import {useQuery } from '@apollo/client';
+import { QUERY_ME } from '../utils/Queries'
+
 // import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
 function Dashboard() {
+   
     return (
         <div className='dashboard my-5'>
             <Container>

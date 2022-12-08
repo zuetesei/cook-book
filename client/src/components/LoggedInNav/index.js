@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ReorderIcon from '@material-ui/icons/Reorder';
-
+import Auth from '../../utils/auth'
 function LoggedInNavbar() {
     const [expandNavBar, setExpandNavBar] = useState(false);
 
@@ -19,7 +19,7 @@ function LoggedInNavbar() {
                 <Link to='/'> Dahsboard </Link>
                 <Link to='/savedrecipes'> Recipes </Link>
                 <Link to='/profile'> Profile </Link>
-                <button> Logout </button>
+                <button onClick={Auth.logout}> Logout </button>
             </div>
         </div>
     );

@@ -21,16 +21,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Signup.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
-// import Auth from "./utils/auth";
+import Auth from "./utils/auth";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
 });
 
-const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache(),
-});
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
@@ -42,14 +38,19 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
+    
     <ApolloProvider client={client}>
       <Router>
-        {isLoggedIn ? <LoggedInNav /> : <Nav />}
+        {Auth.loggedIn() ? <LoggedInNav /> : <Nav />}
         {/* <Nav /> */}
         <Routes>
           <Route path="/" element={<Home />} />

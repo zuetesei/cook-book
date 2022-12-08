@@ -21,6 +21,15 @@ const resolvers = {
             return res
           },
 
+          recipes: async ()=>{
+            const res = await Recipe.find({})
+            return res
+          },
+
+          recipe: async (parent, { _id }) => {
+            return Recipe.findOne({ _id });
+          }
+
 
 
          
