@@ -10,6 +10,17 @@ function LoggedInNavbar() {
         setExpandNavBar(false)
     }, ([location]));
 
+    const logout = (e) => {
+        e.preventDefault();
+        console.log('Logout');
+
+        // CLEAR DATA FROM STORAGE
+        localStorage.clear();
+        sessionStorage.clear();
+
+        window.location.assign("/");
+    }
+
     return (
         <div className='navbar' id={expandNavBar ? 'open' : 'close'}>
             <div className='toggleButton'>
@@ -20,7 +31,7 @@ function LoggedInNavbar() {
                 <Link to='/myrecipes'> My Recipes </Link>
                 {/* <Link to="/recipes"> Add Recipe </Link> */}
                 <Link to='/profile'> Profile </Link>
-                <button> Logout </button>
+                <button onClick={logout}> Logout </button>
             </div>
         </div>
     );

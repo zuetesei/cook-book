@@ -4,7 +4,9 @@ import {
   ApolloProvider,
   ApolloClient,
   InMemoryCache,
-  createHttpLink
+  createHttpLink,
+  gql,
+  useQuery,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context'
 import Nav from "./components/Nav";
@@ -20,6 +22,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Signup.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
+import LoggedInHomepage from "./pages/LoggedInHomePage";
 // import Auth from "./utils/auth";
 
 
@@ -27,9 +30,11 @@ const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
 });
 
+
+const cache = new InMemoryCache()
 const client = new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache(),
+  cache
 });
 
 
@@ -43,16 +48,46 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  return (
+// const IS_LOGGED_IN = gql`
+//   query IsUserLoggedIn {
+//     isLoggedIn @client
+//   }
+// `;
+
+// client.writeQuery({
+//   query: IS_LOGGED_IN,
+//   data: {
+//     isLoggedIn: !!localStorage.getItem("id_token"),
+//   },
+// });
+
+function App() {
+  // const { data } = useQuery(IS_LOGGED_IN)
+
+  if (localStorage.getItem("id_token") === null)
+    return (
+      <ApolloProvider client={client}>
+        <Router>
+          {/* {data ? <LoggedInNav /> : <Nav />} */}
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </ApolloProvider >
+    )
+  else return (
     <ApolloProvider client={client}>
       <Router>
-        {isLoggedIn ? <LoggedInNav /> : <Nav />}
-        {/* <Nav /> */}
+        {/* {data ? <LoggedInNav /> : <Nav />} */}
+        <LoggedInNav />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<LoggedInHomepage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
@@ -60,7 +95,8 @@ function App() {
         <Footer />
       </Router>
     </ApolloProvider >
-  );
+
+  )
 }
 
 export default App;
