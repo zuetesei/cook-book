@@ -20,6 +20,8 @@ export const QUERY_ME = gql`
       recipes {
         _id
         recipeText
+        recipeName
+        ingredients
         createdAt
         favoriteCount
         favorites {

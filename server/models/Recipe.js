@@ -15,6 +15,10 @@ const recipeSchema = new Schema(
       minLength:1,
       maxlength:280
     },
+    ingredients:{
+      type:String,
+      maxlength:280
+    },
     createdAt: {
       type: Date,
       default: Date.now,
