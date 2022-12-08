@@ -5,21 +5,30 @@ import Auth from '../utils/auth';
 import Signup from '../pages/Signup';
 
 const Login = (props) => {
-    const [formState, setFormState] = useState({
-        email: '',
-        password: ''
+  const [formState, setFormState] = useState({
+    email: "",
+    password: "",
+  });
+  const [login, { error }] = useMutation(LOGIN_USER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
     });
-    const [login, { error }] = useMutation(LOGIN_USER);
+  };
 
-    // update state based on form input changes
-    const handleChange = (event) => {
-        const { name, value } = event.target;
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
 
     // submit form
     const handleFormSubmit = async (event) => {
@@ -27,10 +36,12 @@ const Login = (props) => {
         // event.target.reset()
         console.log('running')
 
-        try {
-            const { data } = await login({
-                variables: { ...formState }
-            });
+    // clear form values
+    setFormState({
+      email: "",
+      password: "",
+    });
+  };
 
             Auth.login(data.login.token);
         } catch (e) {
@@ -86,7 +97,10 @@ const Login = (props) => {
             </form>
             {error && <div>Login failed</div>}
         </div>
-    )
-}
+      </form>
+      {error && <div>Login failed</div>}
+    </div>
+  );
+};
 
 export default Login;

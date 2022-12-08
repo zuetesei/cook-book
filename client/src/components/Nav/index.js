@@ -23,10 +23,16 @@ function Nav() {
   }
 
   return (
-
-    <div className='navbar' id={expandNavBar ? 'open' : 'close'}>
-      <div className='toggleButton'>
-        <button onClick={() => { setExpandNavBar((prev) => !prev); }}> < ReorderIcon /> </button>
+    <div className="navbar" id={expandNavBar ? "open" : "close"}>
+      <div className="toggleButton">
+        <button
+          onClick={() => {
+            setExpandNavBar((prev) => !prev);
+          }}
+        >
+          {" "}
+          <ReorderIcon />{" "}
+        </button>
       </div>
 
       <div className="links">
@@ -36,6 +42,15 @@ function Nav() {
         <Link id="cubic" to="/Signup"> Sign Up </Link>
         {/* <Link to="/recipes"> Add Recipe </Link>
         <Link to="/myrecipes"> My Recipes </Link> */}
+        <div className="logo">
+          <img src={Logo} alt="company logo" />
+        </div>
+        <Link to="/"> Home </Link>
+        <Link to="/signup"> Sign Up </Link>
+        <Link to="/about"> About </Link>
+        {/* <Link to="/recipes"> Add Recipe </Link> */}
+        {/* <Link to="/myrecipes"> My Recipes </Link> */}
+        {/* <Link to="/friends"> Friends </Link> */}
       </div>
     </div>
   );
