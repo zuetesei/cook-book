@@ -5,10 +5,12 @@ import {
   ApolloClient,
   InMemoryCache,
   createHttpLink,
+
   gql,
   useQuery,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context'
+
 import Nav from "./components/Nav";
 import LoggedInNav from "./components/LoggedInNav";
 import Footer from "./components/Footer";
@@ -16,8 +18,11 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
-// import Recipes from "./pages/Recipes";
-// import MyRecipes from "./pages/MyRecipes";
+import FriendsList from "./utils/Friends"
+import UserList from "./utils/UserList"
+import Recipes from "./pages/Recipes";
+import MyRecipes from "./pages/MyRecipes";
+import Friends from "./pages/Friends";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Signup.css";
 import "./styles/Navbar.css";
@@ -25,9 +30,8 @@ import "./styles/Footer.css";
 import LoggedInHomepage from "./pages/LoggedInHomePage";
 // import Auth from "./utils/auth";
 
-
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: "http://localhost:3001/graphql",
 });
 
 
@@ -37,17 +41,17 @@ const client = new ApolloClient({
   cache
 });
 
+// import LoggedInNavbar from "./components/LoggedInNav";
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
-
 
 // const IS_LOGGED_IN = gql`
 //   query IsUserLoggedIn {
@@ -91,11 +95,13 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/myrecipes" element={<MyRecipes />} />
+          <Route path="/friends" element={<Friends />} />
         </Routes>
         <Footer />
       </Router>
     </ApolloProvider >
-
   )
 }
 
