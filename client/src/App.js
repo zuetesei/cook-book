@@ -20,7 +20,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Signup.css";
 import "./styles/Navbar.css";
 import "./styles/Footer.css";
-// import Auth from "./utils/auth";
+import Auth from "./utils/auth";
 
 
 const httpLink = createHttpLink({
@@ -49,7 +49,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        {isLoggedIn ? <LoggedInNav /> : <Nav />}
+        {Auth.loggedIn() ? <LoggedInNav /> : <Nav />}
         {/* <Nav /> */}
         <Routes>
           <Route path="/" element={<Home />} />

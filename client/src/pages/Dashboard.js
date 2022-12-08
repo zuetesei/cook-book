@@ -1,12 +1,18 @@
 import React from 'react';
-
+import { useState } from 'react';
 import '../styles/Navbar.css';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Auth from '../utils/auth'
 // import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
 function Dashboard() {
+
+    if(!Auth.loggedIn()){
+        return <div>not login</div>
+    }
+
     return (
         <div className='dashboard'>
             <Container>
