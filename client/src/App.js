@@ -52,13 +52,11 @@ function App() {
         {isLoggedIn ? <LoggedInNav /> : <Nav />}
         {/* <Nav /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/recipe/id" element={<Recipe />} />
           <Route path="/savedrecipes" element={<SavedRecipes />} />
           <Route path="/profile" element={<Profile />} />
+          <Button> Log Off </Button>
+
         </Routes>
         <Footer />
       </Router>
@@ -68,18 +66,3 @@ function App() {
 
 
 export default App;
-
-
-/*
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <UserList list={this.state.list} addFavorite={this.addFavorite} />
-            )}
-          />
-          <Route
-            path="/favorites"
-            render={() => <FavoriteList favorites={this.state.favorites} />}
-          />
-*/
