@@ -10,7 +10,7 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
     "seed": "cd server && npm run seed"
   },
-  "engines": {
+  "engine": {
     "node": "16.17.0"
   },
   "repository": {
