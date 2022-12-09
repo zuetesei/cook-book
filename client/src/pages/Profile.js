@@ -12,9 +12,13 @@ function UserProfile() {
     return (
         <Container className="my-5">
             <Row>
-                <Col sm={8}>
+                <Col sm={4}>
                     <UserCard />
                     <AddForm />
+
+                </Col>
+                <Col sm={4}>
+
                     <UserRecipes />
                 </Col>
 

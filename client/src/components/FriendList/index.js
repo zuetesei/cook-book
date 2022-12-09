@@ -10,7 +10,7 @@ function SubscribersList(props) {
     <div className="subscribers">
       <Container className="friend">
         <div>
-          <h1> Friends </h1>
+          <h1 className="friends"> Friends </h1>
           <InputGroup className="mb-3">
             <Form.Control
               placeholder="Find Friends"

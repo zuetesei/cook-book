@@ -21,7 +21,7 @@ function SignUpForm() {
             const username = event.target.username.value
             const email = event.target.email.value
             const password = event.target.password.value
-            setFormState(formState={username,email,password})
+            setFormState(formState = { username, email, password })
             console.log(formState)
             const { data } = await addUser({
                 variables: formState

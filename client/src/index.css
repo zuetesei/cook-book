@@ -18,3 +18,8 @@ body {
   font-weight: 300;
   background-color: var(--tan);
 }
+
+.card-header,
+.friends {
+  font-family: 'Pacifico';
+}
