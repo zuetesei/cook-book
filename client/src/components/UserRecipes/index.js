@@ -1,17 +1,39 @@
 import React from 'react';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import {useQuery} from '@apollo/client'
+import {QUERY_ME} from '../../utils/Queries'
 
-function UserRecipes() {
+
+function UserRecipes(props) {
+    const { data } = useQuery(QUERY_ME)
+   if(data){
+    // const items = props.tiems
+    const items = data.me.recipes
+    console.log(items)
     return (
-        <div className='favRecipes'>
-            <h1> <MenuBookIcon /> My Recipes </h1>
-            <ul>
-                <li> Recipe 1 </li>
-                <li> Recipe 2 </li>
-                <li> Recipe 3 </li>
-                <li> Recipe 4 </li>
-            </ul>
-        </div>
+        <Card style={{ width: '18rem' }}>
+            <Card.Header> My Recipes </Card.Header>
+            <ListGroup variant="flush">
+                {items.map(item=>(
+                    <ListGroup.Item ><h3>{item.recipeName}</h3> <p>{item.recipeText}</p><h4>Ingredients</h4><p>{item.ingredients}</p></ListGroup.Item>
+                       
+                ))}
+            </ListGroup>
+        </Card>
+    )
+   }
+    return (
+        <Card style={{ width: '18rem' }}>
+            <Card.Header> My Recipes </Card.Header>
+            <ListGroup variant="flush">
+                <ListGroup.Item> Recipe 1 </ListGroup.Item>
+                <ListGroup.Item> Recipe 2 </ListGroup.Item>
+                <ListGroup.Item> Recipe 3 </ListGroup.Item>
+                
+            </ListGroup>
+        </Card>
+           
     )
 }
 

@@ -19,7 +19,7 @@ function LogInForm() {
 
             const email = event.target.email.value
             const password = event.target.password.value
-            console.log(email,password)
+            
             setFormState(formState={email,password})
     
             const { data } = await login({variables:formState})

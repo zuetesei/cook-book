@@ -1,35 +1,33 @@
 import React from 'react';
-import { useState } from 'react';
+import UserCard from '../components/UserCard';
 import '../styles/Navbar.css';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import UserRecipes from '../components/UserRecipes';
+import AddForm from '../components/AddForm';
+import AllRecipes from '../components/AllRecipes';
+import '../styles/Dashboard.css'
 import Auth from '../utils/auth'
+import { useMutation } from '@apollo/client';
+import {useQuery } from '@apollo/client';
+import { QUERY_ME } from '../utils/Queries'
+
 // import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
 function Dashboard() {
-
-    if(!Auth.loggedIn()){
-        return <div>not login</div>
-    }
-
+   
     return (
-        <div className='dashboard'>
+        <div className='dashboard my-5'>
             <Container>
                 <Row>
-                    <Col className='userFeed'>
-                        <h2> Hot Recipes </h2>
+                    <Col sm={8} className='userFeed'>
+                        <AllRecipes />
                     </Col>
-                    <Col className='userInfo'>
-                        <h2> @LOVE.ZUE </h2>
-                        {/* <button> <NoteAddIcon /> </button> */}
-                        <h3> My Recipes </h3>
-                        <ul>
-                            <li> Recipe 1 </li>
-                            <li> Recipe 2 </li>
-                            <li> Recipe 3 </li>
-                            <li> Recipe 4 </li>
-                        </ul>
+                    <Col sm={4} className='userInfo'>
+                        <UserCard />
+                        <AddForm />
+                        <UserRecipes />
                     </Col>
                 </Row>
             </Container>

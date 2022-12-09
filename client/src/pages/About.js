@@ -13,11 +13,11 @@ function About() {
             <h2> Contributors </h2>
             <a href="https://github.com/monkeyd87"> Dennis Jackson </a>,
             <a href="https://github.com/idahuy"> Huy Nguyen </a>,
-            <a href="https://github.com/jonathonb1"> Jon </a>,
-            <a href="https://github.com/ryanpjhickey"> Ryan </a> &
+            <a href="https://github.com/jonathonb1"> Jonathon Biala </a>,
+            <a href="https://github.com/ryanpjhickey"> Ryan Hickey </a> &
             <a href="https://github.com/zuetesei"> Zue Tesei </a>
         </div>
     )
 }
 
-export default About; 
+export default About;

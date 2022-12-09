@@ -2,16 +2,27 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import FriendList from '../components/FriendList';
-// import UserRecipes from '../components/UserRecipes';
+import FriendList from "../components/FriendList";
+import AddForm from "../components/AddForm";
+import UserCard from '../components/UserCard';
+import UserRecipes from '../components/UserRecipes';
 
 function UserProfile() {
 
     return (
-        <Container>
+        <Container className="my-5">
             <Row>
-                <Col sm={8}> @username + user recipes component </Col>
-                <Col sm={4}> Friends list </Col>
+                <Col sm={8}>
+                    <UserCard />
+                    <AddForm />
+                    <UserRecipes />
+                </Col>
+
+                <Col sm={4}>
+                    <div>
+                        <FriendList />
+                    </div>
+                </Col>
             </Row>
         </Container>
     )

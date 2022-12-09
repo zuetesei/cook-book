@@ -17,15 +17,16 @@ export const QUERY_ME = gql`
       username
       email
       friendCount
-      thoughts {
+      recipes {
         _id
-        thoughtText
+        recipeText
+        recipeName
+        ingredients
         createdAt
-        reactionCount
-        reactions {
+        favoriteCount
+        favorites {
           _id
           createdAt
-          reactionBody
           username
         }
       }
@@ -37,19 +38,18 @@ export const QUERY_ME = gql`
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+export const QUERY_RECIPES = gql`
+  query recipes($username: String) {
+    recipes(username: $username) {
       _id
-      thoughtText
+      recipeText
       createdAt
       username
-      reactionCount
-      reactions {
+      favoriteCount
+      favorites {
         _id
         createdAt
         username
-        reactionBody
       }
     }
   }

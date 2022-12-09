@@ -10,21 +10,21 @@ const typeDefs = gql`
     recipes: [Recipe]
     friends: [User]
   }
+  
 
   type Recipe {
     _id: ID
-    recipeName: String
     recipeText: String
-    recipeIngredients:[String]
+    recipeName: String
+    ingredients: String
     createdAt: String
     username: String
-    reactionCount: Int
-    reactions: [Reaction]
+    favoriteCount: Int
+    favorites: [Recipe]
   }
 
-  type Reaction {
+  type Favorite {
     _id: ID
-    reactionBody: String
     createdAt: String
     username: String
   }
@@ -33,14 +33,16 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    Recipes: [Recipe]
-    Recipe(_id: ID!): Recipe
+    Recipes(username: String): [Recipe]
+    recipe(_id: ID!): Recipe
+    recipes:[Recipe]
+    
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addRecipe(recipeText: String!,recipeName: String!,recipeIngredients: [String]!): Recipe
+    addRecipe(recipeText: String! recipeName: String! ingredients: String!): Recipe
     addReaction(RecipeId: ID!, reactionBody: String!): Recipe
     addFriend(friendId: ID!): User
   }

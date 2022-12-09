@@ -5,22 +5,22 @@ import Auth from '../utils/auth';
 import Signup from '../pages/Signup';
 
 const Login = (props) => {
-    const [formState, setFormState] = useState({
-        email: '',
-        password: ''
-    });
-    const [login, { error }] = useMutation(LOGIN_USER);
+  let [formState, setFormState] = useState({
+    email: '',
+    password: ''
+  });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
-    // update state based on form input changes
-    const handleChange = (event) => {
-        const { name, value } = event.target;
+  // update state based on form input changes
+  
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    setFormState(formState={email: event.target.email.value,password: event.target.password.value})
 
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+    console.log('running')
 
+<<<<<<< HEAD
     // submit form
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -43,7 +43,19 @@ const Login = (props) => {
             password: '',
         });
     };
+=======
+    try {
+      const { data } = await login({
+        variables: { ...formState }
+      });
+>>>>>>> new_working_branch
 
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.log(formState)
+      console.error(e);
+    }
+  }
     // if (authMode === 'signin') {}
     return (
         <div className="Auth-form-container">
@@ -86,7 +98,7 @@ const Login = (props) => {
             </form>
             {error && <div>Login failed</div>}
         </div>
-    )
-}
+  );
+};
 
 export default Login;
