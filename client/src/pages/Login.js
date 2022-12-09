@@ -20,35 +20,10 @@ const Login = (props) => {
 
     console.log('running')
 
-<<<<<<< HEAD
-    // submit form
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        // event.target.reset()
-        console.log('running')
-
-        try {
-            const { data } = await login({
-                variables: { ...formState }
-            });
-
-            Auth.login(data.login.token);
-        } catch (e) {
-            console.error(e);
-        }
-
-        // clear form values
-        setFormState({
-            email: '',
-            password: '',
-        });
-    };
-=======
     try {
       const { data } = await login({
         variables: { ...formState }
       });
->>>>>>> new_working_branch
 
       Auth.login(data.login.token);
     } catch (e) {

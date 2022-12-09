@@ -24,6 +24,7 @@ function AddFormModal() {
     }catch(e){
       console.log(e)
     }
+    window.location.assign('/dashboard')
     setShow(false)
 
     
