@@ -12,20 +12,12 @@ const recipeSchema = new Schema(
     },
     recipeName:{
       type:String,
-<<<<<<< HEAD
-      minlength:1,
-      maxlength:280
-    },
-    recipeIngredients:{
-      type: Array,
-=======
       minLength:1,
       maxlength:280
     },
     ingredients:{
       type:String,
       maxlength:280
->>>>>>> new_working_branch
     },
     createdAt: {
       type: Date,

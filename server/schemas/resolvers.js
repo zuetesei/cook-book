@@ -21,11 +21,6 @@ const resolvers = {
             return res
           },
 
-<<<<<<< HEAD
-          Recipes: async ()=>{
-            const res = await Recipe.find({})
-            return res
-=======
           recipes: async ()=>{
             const res = await Recipe.find({})
             return res
@@ -33,7 +28,6 @@ const resolvers = {
 
           recipe: async (parent, { _id }) => {
             return Recipe.findOne({ _id });
->>>>>>> new_working_branch
           }
         
         },
