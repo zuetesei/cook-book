@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/onlycooks", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/onlycook", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -8,5 +8,3 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/onlycooks", {
 });
 
 module.exports = mongoose.connection;
-
-// test
