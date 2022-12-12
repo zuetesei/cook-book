@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import OnlyCooks from '../assets/onlycooks.png';
 import '../styles/About.css';
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
