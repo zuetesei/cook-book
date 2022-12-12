@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import ReorderIcon from '@material-ui/icons/Reorder';
+// import ReorderIcon from '@material-ui/icons/Reorder';
 import Auth from '../../utils/auth'
 import Logo from "../../assets/logo.png";
 
@@ -15,7 +15,9 @@ function LoggedInNavbar() {
     return (
         <div className='navbar' id={expandNavBar ? 'open' : 'close'}>
             <div className='toggleButton'>
-                <button onClick={() => { setExpandNavBar((prev) => !prev); }}> < ReorderIcon /> </button>
+                <button onClick={() => { setExpandNavBar((prev) => !prev); }}>
+                    {/* < ReorderIcon /> */}
+                </button>
             </div>
             <div className='links'>
                 <Link to="/">

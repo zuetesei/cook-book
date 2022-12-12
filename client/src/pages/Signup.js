@@ -28,7 +28,8 @@ function SignUpForm() {
             });
 
             Auth.login(data.addUser.token);
-        } catch (e) {
+        }
+        catch (e) {
             console.error(e);
         }
     };
@@ -42,7 +43,7 @@ function SignUpForm() {
                     <h3 className="Auth-form-title">Sign Up</h3>
                     <div className="text-center">
                         Already registered?{" "}
-                        <span className="link-primary">
+                        <span className="link-primary" onClick={Login}>
                             Sign In
                         </span>
                     </div>
