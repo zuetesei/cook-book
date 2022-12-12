@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Video](#Video)
+- [Video of functioning app](#Video)
 - [Description](#Description)
 - [Technologies](#Technologies)
 - [Links](#Links)
