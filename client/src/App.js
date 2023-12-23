@@ -24,7 +24,7 @@ import "./styles/Footer.css";
 // import Auth from "./utils/auth";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: "https://onlycooks.herokuapp.com/graphql",
 });
 
 
